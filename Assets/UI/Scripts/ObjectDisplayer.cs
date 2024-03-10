@@ -36,7 +36,9 @@ public class ObjectDisplayer : MonoBehaviour
 
 	private RectTransform mainPanelBasicRect;
 	private RectTransform bottomPanelBasicRect;
-	
+
+	public bool isHovering = false;
+	public float hoverTimeThreshold = 0.0f;
 	public void Displayer()
 	{
 		if (ObjectToDisplay != null)
@@ -143,13 +145,36 @@ public class ObjectDisplayer : MonoBehaviour
 		UpdateMousePosition();
 		StartCoroutine(StartCoroutineUpdatePostion());
 	}
+
+	IEnumerator HoverTimer()
+	{
+		float timer = 0f;
+		var currentObject = ObjectToDisplay; 
+
+		while (timer < hoverTimeThreshold)
+		{
+			timer += Time.deltaTime;
+
+			if (ObjectToDisplay == null && currentObject != null)
+			{
+				yield break;
+			}
+
+			yield return null;
+		}
+
+		if (ObjectToDisplay != null)
+		{
+			StartCoroutine(StartCoroutineUpdatePostion());
+			Displayer();
+		}
+	}
 	public void StartDisplay(SelectableObject objectToDisplay)
 	{
 		UpdateMousePosition();
 		ObjectToDisplay = objectToDisplay;
 
-		StartCoroutine(StartCoroutineUpdatePostion());
-		Displayer();
+		StartCoroutine(HoverTimer());
 	}
 	public void StopDisplay()
 	{

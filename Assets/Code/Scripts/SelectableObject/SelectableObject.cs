@@ -16,8 +16,8 @@ public class SelectableObject : ScriptableObject
 	public int MaxSettlerCapacity;
 	public GameObject ObjectPrefab;
 
-	[TextArea]
-	public string Description = "Description placeholder";
+	//[TextArea]
+	//public string Description = "Description placeholder";
 }
 
 public enum SelectableObjectType
