@@ -17,6 +17,7 @@ public class ObjectDisplayer : MonoBehaviour
 	[SerializeField] private Vector2 border = new Vector2(0.85f, 5f);
 	[SerializeField] private float displayDelay = 1.5f;
 	[SerializeField] private float heightOfText = 80f;
+	[SerializeField] private float hoverTimeThreshold = 0.0f;
 	private float activeTexts;
 
 	[Header("Object Names")]
@@ -37,8 +38,7 @@ public class ObjectDisplayer : MonoBehaviour
 	private RectTransform mainPanelBasicRect;
 	private RectTransform bottomPanelBasicRect;
 
-	public bool isHovering = false;
-	public float hoverTimeThreshold = 0.0f;
+
 	public void Displayer()
 	{
 		if (ObjectToDisplay != null)
