@@ -33,7 +33,6 @@ public class CursorAnimation : MonoBehaviour
     private void Start()
     {
         Cursor.visible = false;
-        SetCursorTexture(regularSprite, regularAnchor);
     }
 
     private void Update()

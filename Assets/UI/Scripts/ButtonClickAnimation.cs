@@ -7,10 +7,12 @@ public class ButtonClickAnimation : MonoBehaviour
     [SerializeField] private Button button;
     [SerializeField] private Sprite normalSprite;
     [SerializeField] private Sprite clickedSprite;
+    [SerializeField] private float buttonDelay = 0.2f;
 
     [Header("Audio Settings")]
     [SerializeField] private AudioClip clickSound;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private float clickVolume = 0.1f;
 
     private Sprite originalSprite;
 
@@ -29,12 +31,13 @@ public class ButtonClickAnimation : MonoBehaviour
 
     private System.Collections.IEnumerator ResetButtonSprite()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(buttonDelay);
         button.image.sprite = originalSprite;
     }
 
     private void PlayClickSound()
     {
+        audioSource.volume = clickVolume;
         audioSource.PlayOneShot(clickSound);
     }
 }
