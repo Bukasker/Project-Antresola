@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New SelectableObject", menuName = "Selection/StructureObject")]
-public class StructureClass : SelectableObject
+public class Structure : SelectableObject
 {
 	[Space]
 	[Header("Structure  Settings")]
