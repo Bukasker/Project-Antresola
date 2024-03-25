@@ -16,8 +16,10 @@ public class SelectableObject : ScriptableObject
 	public int MaxSettlerCapacity;
 	public GameObject ObjectPrefab;
 
-	//[TextArea]
-	//public string Description = "Description placeholder";
+	[Space]
+	[Header("Structure  Settings")]
+	public StructureType StructureType;
+
 }
 
 public enum SelectableObjectType
@@ -29,4 +31,14 @@ public enum SelectableObjectType
 	Settler,
 	Food,
 	Structure
+}
+
+public enum StructureType
+{
+	Null,
+	House,
+	Field,
+	Irigation,
+	Walls,
+	Granary
 }

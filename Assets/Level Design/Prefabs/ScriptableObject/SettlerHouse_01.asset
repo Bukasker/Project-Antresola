@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e625fd38ff7f8419d4838075c37220, type: 3}
+  m_Name: SettlerHouse_01
+  m_EditorClassIdentifier: 
+  ObjectName: SettlerHouse
+  ObjectType: 6
+  WoodCapacity: 0
+  MaxWoodCapacity: 0
+  StoneCapacity: 0
+  MaxStoneCapacity: 0
+  FoodCapacity: 0
+  MaxFoodCapacity: 0
+  SettlerCapacity: 10
+  MaxSettlerCapacity: 10
+  ObjectPrefab: {fileID: 1639332312381445912, guid: d2fb2ea531fdd714abc192692500741a, type: 3}
+  StructureType: 1
