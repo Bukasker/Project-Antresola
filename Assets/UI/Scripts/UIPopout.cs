@@ -30,7 +30,7 @@ public class UIPopout : MonoBehaviour
 		isAnimating = true;
 
 		Vector2 startPosition = forward ? originalAnchoredPosition : new Vector2(targetPosition.x, -targetPosition.y);
-		Vector2 endPosition = forward ? targetPosition : new Vector2(targetPosition.x, -targetPosition.y*20);
+		Vector2 endPosition = forward ? targetPosition : new Vector2(targetPosition.x, -targetPosition.y * jumpHeight);
 		float heightOffset = forward ? jumpHeight : -jumpHeight;
 
 		float elapsedTime = 0;
