@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82e625fd38ff7f8419d4838075c37220, type: 3}
-  m_Name: Tree_Oak
+  m_Name: Pine_Tree
   m_EditorClassIdentifier: 
-  ObjectName: Oak Tree
+  ObjectName: Pine Tree
   ObjectType: 0
   WoodCapacity: 50
   MaxWoodCapacity: 50
@@ -22,5 +22,5 @@ MonoBehaviour:
   MaxFoodCapacity: 0
   SettlerCapacity: 0
   MaxSettlerCapacity: 0
-  ObjectPrefab: {fileID: 0}
-  Description: Description placeholder
+  ObjectPrefab: {fileID: 7557696469415399683, guid: 6395097d98044d248a8e0eef372f2adc, type: 3}
+  StructureType: 0

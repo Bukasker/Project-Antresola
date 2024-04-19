@@ -138,8 +138,20 @@ public class BuildingManager : MonoBehaviour
 
 	public void InitializeWithBuilding(GameObject building)
 	{
-		temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
-		FollowBuilding();
+		if(temp == null)
+		{
+			temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
+			FollowBuilding();
+		}
+		else
+		{
+			var tempTemp = temp;
+			ClearArea();
+			Destroy(tempTemp.gameObject);
+
+			temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
+			FollowBuilding();
+		}
 	}
 
 	private void ClearArea()
@@ -190,7 +202,6 @@ public class BuildingManager : MonoBehaviour
 		}
 		return true;
 	}
-
 
 	public void TakeArea(BoundsInt area)
 	{

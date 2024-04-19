@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e625fd38ff7f8419d4838075c37220, type: 3}
+  m_Name: Britch_Tree
+  m_EditorClassIdentifier: 
+  ObjectName: Britch Tree
+  ObjectType: 0
+  WoodCapacity: 50
+  MaxWoodCapacity: 50
+  StoneCapacity: 0
+  MaxStoneCapacity: 0
+  FoodCapacity: 0
+  MaxFoodCapacity: 0
+  SettlerCapacity: 0
+  MaxSettlerCapacity: 0
+  ObjectPrefab: {fileID: 2078365139477190887, guid: 98474af78bd8829499d4b6fbb69e5857, type: 3}
+  StructureType: 0
