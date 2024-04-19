@@ -31,6 +31,10 @@ public class SelectableObjectManager : MonoBehaviour
 
 	private void Update()
 	{
+		if(selectedObject == null || selectedObject.ObjectType == SelectableObjectType.Structure)
+		{
+			return;
+		}
 		if (Input.GetKey(SelectKey))
 		{
 			if (selectedGameObject != null)

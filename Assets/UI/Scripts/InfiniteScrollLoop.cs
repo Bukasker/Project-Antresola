@@ -2,15 +2,16 @@ using UnityEngine;
 using UnityEngine.UI;
 public class InfiniteScrollLoop : MonoBehaviour
 {
+	[Header("Scroll React Settings")]
 	[SerializeField] private ScrollRect scrollRect;
 	[SerializeField] private RectTransform viewPortTransform;
 	[SerializeField] private RectTransform contentPanelTransform;
 	[SerializeField] private HorizontalLayoutGroup horizontalLayoutGroup;
+
+	[Header("Conntent React Settings")]
 	[SerializeField] private RectTransform[] ItemList;
-
 	[SerializeField] private int numberOfItemsToDisplay = 3;
-
-	[SerializeField] private Vector2 OldVelocity;
+	private Vector2 OldVelocity;
 	bool isUpdated;
 
 	void Start()

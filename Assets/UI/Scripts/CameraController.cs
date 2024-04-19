@@ -10,7 +10,8 @@ public class CameraController : MonoBehaviour
     public float minZoom = 2f;
     public float maxZoom = 20f;
     public float currentZoomPercentage;
-    public Camera mainCamera;
+	public float StartCameraZoom = 4f;
+	public Camera mainCamera;
 
     [Header("Moving Camera Keys")]
     public KeyCode moveUpKey = KeyCode.W;
@@ -24,8 +25,11 @@ public class CameraController : MonoBehaviour
     public KeyCode moveLeftKeyAlt = KeyCode.LeftArrow;
     public KeyCode moveRightKeyAlt = KeyCode.RightArrow;
 
-
-    private void FixedUpdate()
+	private void Start()
+	{
+        mainCamera.orthographicSize = mainCamera.orthographicSize * StartCameraZoom;
+	}
+	private void FixedUpdate()
     {
         MoveCamera();
     }
@@ -58,13 +62,13 @@ public class CameraController : MonoBehaviour
     private void ZoomCameraWithMouseScrollWheel()
     {
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
-        if (scrollInput > 0 && mainCamera.orthographicSize < maxZoom)
-        {
-            mainCamera.orthographicSize += scrollSpeed;
-        }
-        else if (scrollInput < 0 && mainCamera.orthographicSize > minZoom)
+        if (scrollInput > 0 && mainCamera.orthographicSize > maxZoom)
         {
             mainCamera.orthographicSize -= scrollSpeed;
+        }
+        else if (scrollInput < 0 && mainCamera.orthographicSize < minZoom)
+        {
+            mainCamera.orthographicSize += scrollSpeed;
         }
     }
     private void UpdateZoomPercentage()

@@ -10,6 +10,7 @@ public class BuildingManager : MonoBehaviour
 
 	public GridLayout GridLayout;
 	public Tilemap MainTilemap;
+	public TilemapRenderer MainTilemapRenderer;
 	public Tilemap TempTilemap;
 
 	[Header("Building Tiles")]
@@ -19,9 +20,10 @@ public class BuildingManager : MonoBehaviour
 
 	public static Dictionary<TileBuildType, TileBase> tileBases = new Dictionary<TileBuildType, TileBase>();
 
-	private Building temp;
+	public Building temp;
 	private Vector3 prevPos;
 	private BoundsInt prevArea;
+	private bool isInBuildMode;
 
 	[Header("Building Controlls")]
 	public KeyCode MoveKey = KeyCode.Mouse0;
@@ -49,7 +51,7 @@ public class BuildingManager : MonoBehaviour
 
 	private void Update()
 	{
-		if (!temp)
+		if (temp == null || isInBuildMode == false)
 		{
 			return;
 		}
@@ -87,7 +89,7 @@ public class BuildingManager : MonoBehaviour
 				Debug.Log("Cannot place here");
 			}
 		}
-		else if (Input.GetKeyDown(CancelBuild))
+		else if (Input.GetKeyDown(CancelBuild) && !temp.Placed)
 		{
 			ClearArea();
 			Destroy(temp.gameObject);
@@ -197,6 +199,19 @@ public class BuildingManager : MonoBehaviour
 	}
 
 	#endregion
+
+	public void SetBuildMode(bool isOn)
+	{
+		isInBuildMode = isOn;
+		MainTilemapRenderer.enabled = isOn;
+
+		if (!isOn && !temp.Placed)
+		{
+			temp = null;
+			ClearArea();
+			Destroy(temp.gameObject);
+		}
+	}
 }
 
 public enum TileBuildType
