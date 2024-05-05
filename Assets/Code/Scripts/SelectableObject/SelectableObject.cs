@@ -25,7 +25,7 @@ public class SelectableObject : ScriptableObject
 public enum SelectableObjectType
 {
 	Tree,
-	CutedTree,
+	CutTree,
 	Stone,
 	MinedStone,
 	Settler,
